@@ -4,10 +4,16 @@
   "editor": "wokwi",
   "parts": [
     { "type": "wokwi-arduino-uno", "id": "uno", "top": 200, "left": 200, "attrs": {} },
-    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -60, "left": 20, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -56.1, "left": 24.7, "attrs": {} },
     { "type": "wokwi-servo", "id": "servo1", "top": -70, "left": 560, "attrs": {} },
     { "type": "wokwi-led", "id": "led1", "top": 30, "left": 454, "attrs": { "color": "red" } },
-    { "type": "wokwi-led", "id": "led2", "top": 30, "left": 406, "attrs": { "color": "limegreen" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 30,
+      "left": 406,
+      "attrs": { "color": "limegreen" }
+    },
     {
       "type": "wokwi-resistor",
       "id": "r1",
@@ -24,28 +30,59 @@
       "rotate": 90,
       "attrs": { "value": "220" }
     },
-    { "type": "wokwi-buzzer", "id": "bz1", "top": -60, "left": 230, "attrs": { "volume": "0.1" } }
+    {
+      "type": "wokwi-text",
+      "id": "lbl4",
+      "top": -38.4,
+      "left": 297.6,
+      "attrs": { "text": "Buzzer" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "lbl5",
+      "top": 19.2,
+      "left": 643.2,
+      "attrs": { "text": "Servo" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "lbl6",
+      "top": -86.4,
+      "left": -38.4,
+      "attrs": { "text": "HC-SR04 Ultrasonic Distance Sensor" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "lbl7",
+      "top": 403.2,
+      "left": 297.6,
+      "attrs": { "text": "ArduinoUNO" }
+    },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": -60, "left": 230, "attrs": { "volume": "0.1" } },
+    {
+      "type": "wokwi-text",
+      "id": "lbl2",
+      "top": 9.6,
+      "left": 393.6,
+      "attrs": { "text": "LED Indicators" }
+    }
   ],
   "connections": [
-    ["ultrasonic1:VCC",  "uno:5V",    "red",   ["v160", "h260"]],
-    ["ultrasonic1:GND",  "uno:GND.1", "black", ["v180", "h200"]],
-    ["ultrasonic1:TRIG", "uno:9",     "green", ["v200", "h240"]],
-    ["ultrasonic1:ECHO", "uno:10",    "yellow",["v220", "h230"]],
-
-    ["servo1:V+",  "uno:5V",    "red",   ["v0", "h-20", "v300", "h-320"]],
-    ["servo1:GND", "uno:GND.1", "black", ["v20", "h-20", "v280", "h-300"]],
-    ["servo1:PWM", "uno:6",     "green", ["v40", "h-20", "v220", "h-280"]],
-
-    ["uno:4",   "r1:2", "green", ["v0"]],
-    ["r1:1",    "led2:A","green", ["v0"]],
-    ["led2:C",  "uno:GND.1", "black", ["v60", "h-80"]],
-
-    ["uno:3",   "r2:2", "green", ["v0"]],
-    ["r2:1",    "led1:A","green", ["v0"]],
-    ["led1:C",  "uno:GND.1", "black", ["v60", "h-120"]],
-
-    ["bz1:1",   "uno:5",     "green", ["v180", "h80"]],
-    ["bz1:2",   "uno:GND.1", "black", ["v200", "h60"]]
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v160", "h260" ] ],
+    [ "ultrasonic1:GND", "uno:GND.1", "black", [ "v180", "h200" ] ],
+    [ "ultrasonic1:TRIG", "uno:9", "green", [ "v200", "h240" ] ],
+    [ "ultrasonic1:ECHO", "uno:10", "yellow", [ "v220", "h230" ] ],
+    [ "servo1:V+", "uno:5V", "red", [ "v0", "h-20", "v300", "h-320" ] ],
+    [ "servo1:GND", "uno:GND.1", "black", [ "v20", "h-20", "v280", "h-300" ] ],
+    [ "servo1:PWM", "uno:6", "green", [ "v40", "h-20", "v220", "h-280" ] ],
+    [ "uno:4", "r1:2", "green", [ "v0" ] ],
+    [ "r1:1", "led2:A", "green", [ "v0" ] ],
+    [ "led2:C", "uno:GND.1", "black", [ "v60", "h-80" ] ],
+    [ "uno:3", "r2:2", "green", [ "v0" ] ],
+    [ "r2:1", "led1:A", "green", [ "v0" ] ],
+    [ "led1:C", "uno:GND.1", "black", [ "v60", "h-120" ] ],
+    [ "bz1:1", "uno:5", "green", [ "v180", "h80" ] ],
+    [ "bz1:2", "uno:GND.1", "black", [ "v200", "h60" ] ]
   ],
   "dependencies": {}
 }
